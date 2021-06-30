@@ -455,7 +455,7 @@ func (u *User) handleServiceBot(service string, toUser *User, msg string) {
 		}
 	*/
 	if cmd.maxParams > -1 && len(commands[1:]) > cmd.maxParams {
-		u.MsgUser(toUser, fmt.Sprintf("%s takes at most %v arguments", commands[0], cmd.maxParams))
+		u.MsgUser(toUser, fmt.Sprintf("%s takes at most %v arguments [%s]", commands[0], cmd.maxParams, strings.Join(commands[1:], ", ")))
 		return
 	}
 
